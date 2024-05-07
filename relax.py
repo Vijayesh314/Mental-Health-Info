@@ -1,4 +1,9 @@
+from flask import Flask, render_template, request, redirect, url_for
 import random
+
+app = Flask(__name__)
+
+# Define Hangman stages
 stage_0 = r"""
    -----------  
       |     |
@@ -100,62 +105,66 @@ stage_9 = r"""
  --------------
 """
 
+# Add the rest of the stages here...
+
 stages = [stage_0, stage_1, stage_2, stage_3, stage_4, stage_5, stage_6, stage_7, stage_8, stage_9]
-#The player starts with 0 tries
+
+# Initialize global variables
+secret_word = ""
+clue = []
 lives = 0
+guessed_letters = []
 
-#Make a list of words that we want to use in the game. Each item in the list is a word with five characters
-words = ['anxiety', 'sympathy', 'depression', 'empathy', 'eustress', 'distress', 'suicide', 'dopamine', 'addiction', 'stigma']
+# Load words from file
+with open("words.txt", "r") as file:
+    words = file.read().splitlines()
 
-#Pick a word from wordlist at random.
-secret_word = random.choice(words)
+def start_game():
+    global secret_word, clue, lives, guessed_letters
+    secret_word = random.choice(words).lower()
+    clue = ['?' for _ in range(len(secret_word))]
+    lives = 9
+    guessed_letters = []
 
-#Tell the user what the game is - no special characters, only letters
-#Make another list with '?'. Every ? represents one letter-secretword
-clue = list('?' for i in range(len(secret_word)))
+def update_clue(guess):
+    global clue
+    for i, letter in enumerate(secret_word):
+        if letter == guess:
+            clue[i] = letter
 
-heart_symbol = '\u2764\uFE0F'
-guessed_word_correctly = False
+@app.route('/')
+def index():
+    start_game()
+    return render_template('hangman.html', stages=stages, clue=clue, lives=lives, guessed_letters=guessed_letters)
 
-incorrect_guesses = []
+@app.route('/guess', methods=['POST'])
+def guess():
+    global lives, guessed_letters
+    guess = request.form['guess'].lower()
 
-def update_clue(guessed_letter, secret_word, clue):
-   #Guessed_letter = i, secret_word = pizza, clue = ?????
-   index = 0
-   while index < len(secret_word):
-      if guessed_letter == secret_word[index]:
-         clue[index] = guessed_letter
-      index = index + 1
+    if len(guess) == 1 and guess.isalpha():
+        if guess in guessed_letters:
+            return redirect(url_for('index'))
 
+        guessed_letters.append(guess)
 
-while lives <= 9:
-   print(clue)
-   print('Lives completed:', heart_symbol, lives)
-   print(stages[lives])
-   
-   #Ask the player to guess the letter
-   guess = input('guess a letter or the whole word: ')
+        if guess in secret_word:
+            update_clue(guess)
+        else:
+            lives -= 1
 
-   if guess == secret_word:
-      #When the word is guessed correctly, this will break out of the loop
-      guessed_word_correctly = True
-      break
+    elif len(guess) > 1 and guess.isalpha():
+        if guess == secret_word:
+            return redirect(url_for('index'))
 
-   if guess in secret_word:
-      update_clue(guess, secret_word, clue)
+    if lives == 0 or '?' not in clue:
+        return redirect(url_for('game_over'))
 
-   else:
-      #check wheter guessletter is part of secretword, if no, subtract a life
-      print('Incorrect. You lost a life')
-      lives += 1
-      incorrect_guesses.append(guess)
-   
-   print(incorrect_guesses)
+    return redirect(url_for('index'))
 
+@app.route('/game_over')
+def game_over():
+    return render_template('game_over.html', secret_word=secret_word)
 
-#Tell the player if they are correct or not
-#continue this loop until either the word is guessed by player or all nine lives are lost
-if guessed_word_correctly:
-   print('You won! the secret word was ', secret_word)
-else:
-   print('You lost! The secret word was ', secret_word)
+if __name__ == '__main__':
+    app.run(debug=True)
