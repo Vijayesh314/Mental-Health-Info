@@ -13,20 +13,37 @@
     <style>
         p{
             color: rgb(148, 51, 247);
+            font-size: 18px;
+        }
+        #hangman-image img{
+            width: 200px;
+            height: auto;
         }
     </style>
 </head>
 <body>
     <div class="topnav">
-        <a class="active" href="index.html">Home</a>
-        <a href="game.html">Educational Game</a>
+        <a href="index.html">Home</a>
+        <a class="active" href="game.html">Educational Game</a>
         <a href="relievers.html">Stress Relievers</a>
         <a href="disorders.html">Disorders</a>
         <a href="importance.html">This is Important</a>
         <a href="about.html">About</a>
     </div>
     <h1 style="color: white; font-family: 'Courier New', Courier, monospace; font-size: large;">
-        Stress Relieving Game
+        Hangman Game
     </h1>
+    <div id="hangman-image">
+        <img id="OGLife" src="OriginalStage.png" alt="hangman">
+    </div>
+    
+    <p id="clue"></p>
+    <p id="lives"></p>
+    <p id="guessed-letters"></p>
+    
+    <input type="text" id="guess-input">
+    <button onclick="guessLetter()">Guess</button>
+
+    <script src="hangman.js"></script>
 </body>
 </html>
