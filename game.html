@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,18 +7,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <meta charset="UTF-8">
-    <script src="script.js"></script>
+    <script src="hangman.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Educational Game</title>
     <link rel="stylesheet" href="style.css">
     <style>
         p{
-            color: rgb(148, 51, 247);
+            color: rgb(51, 221, 247);
             font-size: 18px;
         }
-        #hangman-image img{
-            width: 200px;
-            height: auto;
+        .hangman-image {
+            display: none;
+        }
+        #OGLife {
+            display: block; 
         }
     </style>
 </head>
@@ -30,16 +33,26 @@
         <a href="importance.html">This is Important</a>
         <a href="about.html">About</a>
     </div>
-    <h1 style="color: white; font-family: 'Courier New', Courier, monospace; font-size: large;">
+    <h1 style="color: rgb(178, 159, 90); font-family: 'Courier New', Courier, monospace; font-size: large;">
         Hangman Game
     </h1>
-    <div id="hangman-image">
-        <img id="OGLife" src="OriginalStage.png" alt="hangman">
+    <div id="hangman-images">
+        <img id="OGLife" class="starting-image" src="OriginalStage.png" alt="hangman" width="200" height="200">
+        <img id="Stage1" class="hangman-image" src="Stage1.png" alt="life1" width="200" height="200">
+        <img id="Stage2" class="hangman-image" src="Stage2.png" alt="life2" width="200" height="200">
+        <img id="Stage3" class="hangman-image" src="Stage3.png" alt="life3" width="200" height="200">
+        <img id="Stage4" class="hangman-image" src="Stage4.png" alt="life4" width="200" height="200">
+        <img id="Stage5" class="hangman-image" src="Stage5.png" alt="life5" width="200" height="200">
+        <img id="Stage6" class="hangman-image" src="Stage6.png" alt="life6" width="200" height="200">
+        <img id="Stage7" class="hangman-image" src="Stage7.png" alt="life7" width="200" height="200">
+        <img id="Stage8" class="hangman-image" src="Stage8.png" alt="life8" width="200" height="200">
+        <img id="Stage9" class="hangman-image" src="Stage9.png" alt="life9" width="200" height="200">
+        <img id="Stage10" class="hangman-image" src="Stage10.png" alt="life10" width="200" height="200">
     </div>
     
-    <p id="clue"></p>
-    <p id="lives"></p>
-    <p id="guessed-letters"></p>
+    <p id="clue" class="gameinfo"></p>
+    <p id="lives" class="gameinfo"></p>
+    <p id="guessed-letters" class="gameinfo"></p>
     
     <input type="text" id="guess-input">
     <button onclick="guessLetter()">Guess</button>
