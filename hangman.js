@@ -1,3 +1,4 @@
+
 /*document.getElementById("Stage1").style.display="none";
 document.getElementById("Stage2").style.display="none";
 document.getElementById("Stage3").style.display="none";
@@ -34,7 +35,6 @@ function startGame() {
     document.getElementById("clue").textContent = "Clue: " + clue.join(' ');
     document.getElementById("lives").textContent = "Lives: " + (10 - lives);
     document.getElementById("guessed-letters").textContent = "Guessed Letters: " + guessedLetters.join(', ');
-    alert("Welcome to the hangman-game.");
 }
 
 function updateClue(guess) {
