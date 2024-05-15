@@ -23,7 +23,7 @@ html, body {
     height:500px;
     width:100%;
     background-color: rgb(119, 151, 170);
-    background-image: linear-gradient(90deg, rgba(49, 49, 49, 0.569), rgba(28, 94, 217, 0.836));
+    background-image: linear-gradient(90deg, rgba(20, 223, 138, 0.853), rgb(13, 227, 242));
     background-size: 150%;
     text-align: center;
 }
@@ -109,7 +109,7 @@ br{
   }
 
   #guessed-letters {
-    color: rgb(148, 51, 247);
+    color: rgb(0, 0, 0);
     font-size: 18px; 
     margin-bottom: 10px; 
   }
