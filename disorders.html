@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,49 +14,63 @@
         p{
             color: rgb(51, 221, 247);
         }
+        table, th, td{
+            border: 3px solid lightblue;
+            color: rgb(103, 150, 212);
+            font-weight: normal;
+            margin: auto;
+        }
     </style>
 </head>
 <body>
     <div class="topnav">
-        <a class="active" href="index.html">Home</a>
-        <a href="game.html">Educational Game</a>
+        <a href="index.html">Home</a>
+        <a class="active" href="disorders.html">Disorders</a>
         <a href="relievers.html">Stress Relievers</a>
-        <a href="disorders.html">Disorders</a>
         <a href="importance.html">This is Important</a>
+        <a href="game.html">Educational(ish?) Game</a>
         <a href="about.html">About</a>
     </div>
     <h1 style="color: white; font-family: 'Courier New', Courier, monospace; font-size: large;">
         Mental Health Disorders
     </h2>
-    <div class="disorder">
-        <h1>Depression</h1>
-        <p>Depression is a mood disorder that causes persistent feelings of sadness, hopelessness, and loss of interest in activities. It can affect how you feel, think, and handle daily activities. Symptoms may include changes in appetite or weight, sleep disturbances, fatigue, feelings of worthlessness or guilt, difficulty concentrating, and thoughts of death or suicide.</p>
-        <p>Treatment for depression often involves a combination of medication, therapy, and lifestyle changes. It's important for individuals with depression to seek help from a healthcare professional.</p>
-    </div>
+    <table width="80%" margin-left="25px">
+        <tr>
+            <th>Disorder</th>
+            <th>Description</th>
+            <th>Treatment</th>
+        </tr>
+        <tr>
+            <th>Depression</th>
+            <th>Depression is a mood disorder that causes persistent feelings of sadness, hopelessness, and loss of interest in activities. It can affect how you feel, think, and handle daily activities. Symptoms may include changes in appetite or weight, sleep disturbances, fatigue, feelings of worthlessness or guilt, difficulty concentrating, and thoughts of death or suicide.</th>
+            <th>Treatment for depression often involves a combination of medication, therapy, and lifestyle changes. It's important for individuals with depression to seek help from a healthcare professional.</th>
+        </tr>
+        <br>
+        <tr>
+            <th>Bipolar Disorder</th>
+            <th>Bipolar disorder, formerly known as manic-depressive illness, is a brain disorder that causes unusual shifts in mood, energy, activity levels, and the ability to carry out day-to-day tasks. There are three main types of bipolar disorder: bipolar I disorder, bipolar II disorder, and cyclothymic disorder.</th>
+            <th>Treatment for bipolar disorder typically involves a combination of medication, therapy, and lifestyle adjustments tailored to the individual's needs, aiming to stabilize mood, manage symptoms, and improve overall quality of life.</th>
+        </tr>
+        <br>
+        <tr>
+            <th>Schizophrenia</th>
+            <th>Schizophrenia is a chronic and severe mental disorder that affects how a person thinks, feels, and behaves. People with schizophrenia may have difficulty distinguishing between what is real and what is imaginary, and they may experience hallucinations, delusions, disorganized thinking, and abnormal motor behavior.</th>
+            <th>Treatment for schizophrenia usually involves a combination of antipsychotic medications, therapy, and support services to help individuals manage symptoms and improve quality of life.</th>
+        </tr>
+        <br>
+        <tr>
+            <th>Post-Traumatic Stress Disorder (PTSD)</th>
+            <th>PTSD is a disorder that can develop in some people who have experienced a shocking, scary, or dangerous event. Symptoms of PTSD may include flashbacks, nightmares, severe anxiety, and uncontrollable thoughts about the event. People with PTSD may also experience emotional numbness, avoidance of reminders of the trauma, and heightened arousal.</th>
+            <th>Treatment for PTSD often involves therapy, such as cognitive-behavioral therapy (CBT) or eye movement desensitization and reprocessing (EMDR), along with medication and support from friends and family.</th>
+        </tr>
+        <br>
+    </table>
+    <h2 class="border" onclick="notAfunc()" id="anchovies"><span class="glyphicon glyphicon-chevron-down"></span>Depression<h2>
+        <p class="borderless" id="attribute" style="visibility: hidden;"></p>
+        <p id="text"></p>
     <br>
-    <div class="disorder">
-        <h1>Anxiety Disorders</h1>
-        <p>Anxiety disorders involve excessive worry, fear, or nervousness that is difficult to control and interferes with daily activities. There are several types of anxiety disorders, including generalized anxiety disorder (GAD), panic disorder, social anxiety disorder, and specific phobias.</p>
-        <p>Symptoms of anxiety disorders may include restlessness, irritability, muscle tension, difficulty concentrating, sleep disturbances, and physical symptoms such as rapid heartbeat or sweating.</p>
-        <p>Treatment for anxiety disorders may include therapy, medication, and relaxation techniques.</p>
-        <br>
-    </div>
-    <div class="disorder">
-        <h1>Bipolar Disorder</h1>
-        <p>Bipolar disorder, formerly known as manic-depressive illness, is a brain disorder that causes unusual shifts in mood, energy, activity levels, and the ability to carry out day-to-day tasks. There are three main types of bipolar disorder: bipolar I disorder, bipolar II disorder, and cyclothymic disorder.</p>
-        <p>Symptoms of bipolar disorder can vary widely and may include periods of mania or hypomania (elevated mood, increased energy, impulsivity) alternating with periods of depression. Treatment typically involves mood stabilizing medications, psychotherapy, and lifestyle changes.</p>
-        <br>
-    </div>
-    <div class="disorder">
-        <h1>Schizophrenia</h1>
-        <p>Schizophrenia is a chronic and severe mental disorder that affects how a person thinks, feels, and behaves. People with schizophrenia may have difficulty distinguishing between what is real and what is imaginary, and they may experience hallucinations, delusions, disorganized thinking, and abnormal motor behavior.</p>
-        <p>Treatment for schizophrenia usually involves a combination of antipsychotic medications, therapy, and support services to help individuals manage symptoms and improve quality of life.</p>
-        <br>
-    </div>
-    <div class="disorder">
-        <h1>Post-Traumatic Stress Disorder (PTSD)</h1>
-        <p>PTSD is a disorder that can develop in some people who have experienced a shocking, scary, or dangerous event. Symptoms of PTSD may include flashbacks, nightmares, severe anxiety, and uncontrollable thoughts about the event. People with PTSD may also experience emotional numbness, avoidance of reminders of the trauma, and heightened arousal.</p>
-        <p>Treatment for PTSD often involves therapy, such as cognitive-behavioral therapy (CBT) or eye movement desensitization and reprocessing (EMDR), along with medication and support from friends and family.</p>
-    </div>
+    <br>
+    <br>
+    <h2>*DISCLAIMER: WE ARE NOT LIABLE *</h2>
 </body>
 </html>
