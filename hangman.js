@@ -117,6 +117,6 @@ function updateGamevisible() {
 }
 
 function gameOver() {
-    alert("Game Over! The secret word was: " + secretWord + getInfo());
+    alert("Game Over! The secret word was: " + secretWord);
     startGame();
 }
