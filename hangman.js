@@ -1,8 +1,3 @@
-let stages = [
-    "OGLife.png", "Stage1.png", "Stage2.png", "Stage3.png", "Stage4.png", "Stage5.png", 
-    "Stage6.png", "Stage7.png", "Stage8.png", "Stage9.png", "Stage10.png"
-];  
-
 let secretWord = "";
 let clue = [];
 let lives = 0;
@@ -32,7 +27,6 @@ function updateClue(guess) {
         }
     }
 }
-
 
 function guessLetter() {
     let guess = document.getElementById("guess-input").value.toLowerCase();
