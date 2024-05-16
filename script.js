@@ -18,7 +18,7 @@ function Functionn(){
         document.getElementById("attribute3").innerHTML="Never put off until tomorrow what can be done today.";
         document.getElementById("attribute4").style.visibility="visible";
         document.getElementById("attribute4").className="border";
-        document.getElementById("attribute4").innerHTML="If you want something bad enough, you fine a way to make it happen.";
+        document.getElementById("attribute4").innerHTML="If you want something bad enough, you find a way to make it happen.";
         x=0;
     }
     else{
