@@ -52,6 +52,9 @@ function guessLetter() {
         }
 
         updateGamevisible(); 
+    document.getElementById("guess-button").addEventListener("click", () => {
+        document.getElementById("guess-input").focus()
+    })
     } else if (guess.length > 1 && guess.match(/^[a-z]+$/)) {
         if (guess === secretWord) {
             alert("Congratulations! You guessed the word!");
@@ -114,6 +117,6 @@ function updateGamevisible() {
 }
 
 function gameOver() {
-    alert("Game Over! The secret word was: " + secretWord);
+    alert("Game Over! The secret word was: " + secretWord + getInfo());
     startGame();
 }
